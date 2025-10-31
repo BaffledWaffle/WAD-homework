@@ -1,0 +1,47 @@
+[
+  {
+    "id": 1,
+    "author": "Lilypad",
+    "created_at": "2025-10-31T14:30:00Z",
+    "description": "Sun is shining and my plants are lovin' it",
+    "avatar_path": "assets/img/account_circle.svg",
+    "image_path": "assets/img/post1.png",
+    "likes": 128
+  },
+  {
+    "id": 2,
+    "author": "PhilosophyIsLife",
+    "created_at": "2025-10-31T15:00:00Z",
+    "description": "Have you ever really thought about pizza? Like, really *thought* about it? It’s more than just bread, sauce, and cheese — it’s a symbol of balance and unity. Every slice begins with a foundation — the crust — much like our lives start with the basics we’re given. Then comes the sauce, rich and messy, spreading everywhere. That’s our passion, our chaos, our energy. The cheese, though, is what brings it all together — it melts, adapts, and covers the rough edges. It’s love, patience, and time. And toppings? That’s where individuality shines. Some people go simple — just mozzarella and basil. Others go bold — pineapple, anchovies, even corn. But in the end, no matter the toppings, it’s still pizza — a reminder that we can all be different and still share the same base. So next time you open a pizza box, remember: you’re not just eating food. You’re holding a circle of philosophy, a slice of life itself.",
+    "avatar_path": "assets/img/account_circle.svg",
+    "image_path": "",
+    "likes": 256
+  },
+  {
+    "id": 3,
+    "author": "Daisy",
+    "created_at": "2025-10-31T16:00:00Z",
+    "description": "Since everyone loves cats, I thought I'd share a picture of my cat Voldemar (Volli for short)",
+    "avatar_path": "assets/img/account_circle.svg",
+    "image_path": "assets/img/Volli.png",
+    "likes": 340
+  },
+  {
+    "id": 4,
+    "author": "PoeticFrog",
+    "created_at": "2025-10-31T17:00:00Z",
+    "description": "Seashells are whispers of the ocean, carrying the memory of waves in their quiet spirals",
+    "avatar_path": "assets/img/account_circle.svg",
+    "image_path": "assets/img/post2.png",
+    "likes": 97
+  },
+  {
+    "id": 5,
+    "author": "PrettyBoy",
+    "created_at": "2025-10-31T18:00:00Z",
+    "description": "Tried to find some aesthetic pictures on Pinterest. This is what came up",
+    "avatar_path": "assets/img/account_circle.svg",
+    "image_path": "assets/img/OpossumWizard.jpg",
+    "likes": 150
+  }
+]

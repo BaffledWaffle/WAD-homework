@@ -26,7 +26,7 @@
             <div id="content-positioner">
                 <div class="sidebar left"></div>
                 <div id="feed-of-posts">
-                    <div class="post">
+                    <!-- <div class="post">
                         <div class="post-images">
                             <img src="assets/img/post1.png" alt="post">
                         </div>
@@ -127,7 +127,7 @@
                                 </div> 
                             </div>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
                 <div class="sidebar right"></div>
             </div>
@@ -159,39 +159,7 @@
             </div>
         </footer>
     </div>
-    <script> /*Javascript for button "show more" if the text is longer than 3 lines*/
-        document.addEventListener("DOMContentLoaded", function() { //script runs only after all HTML elements are loaded
-        const posts = document.querySelectorAll(".post .text"); //“find elements with class text inside elements with class post" 
-
-        posts.forEach(post => {
-            const text = post.querySelector(".main-text");
-            const button = post.querySelector("button");
-
-            //create a hidden clone to measure text "height"
-            const clone = text.cloneNode(true);
-            clone.style.visibility = "hidden";
-            clone.style.position = "absolute";
-            clone.style.height = "auto";
-            clone.style.webkitLineClamp = "unset"; //removes the 3-line limit so we can measure full "height"
-            clone.classList.add("expanded");
-            document.body.appendChild(clone); //temporarily adds it the clone to the page to calculate "height" (but is hidden)
-
-            //if the text fits within 3 lines, hide the "show more" button
-            if (clone.offsetHeight <= text.offsetHeight) {
-            button.style.display = "none";
-            }
-
-            //remove the clone (we don't need it after comparison)
-            clone.remove();
-
-            //click listener to toggle text
-            button.addEventListener("click", function() {
-            text.classList.toggle("expanded"); //adds or removes the class "expanded"
-            this.textContent = text.classList.contains("expanded") ? "Show less" : "Show more";
-            });
-        });
-        });
-    </script>
+    
     <script> /*Displays a new quote in the footer every time the page refreshes*/
     document.addEventListener("DOMContentLoaded", function() {
         const quotes = [
@@ -209,5 +177,71 @@
         document.getElementById("footer-quote").textContent = quotes[randomIndex];
     });
     </script>
+
+
+    <!-- NEW. json usage -->
+     <script>
+    document.addEventListener("DOMContentLoaded", function() {
+    const url = 'https://api.jsonbin.io/v3/b/6904951bae596e708f39ffc3';
+
+    fetch(url)
+        .then(response => response.json())
+        .then(data => {
+            const posts = data.record; 
+            const feed = document.getElementById('feed-of-posts');
+            const postsArray = Array.isArray(posts) ? posts : [posts];
+
+            postsArray.forEach(post => {
+                const postDiv = document.createElement('div');
+                postDiv.className = 'post';
+
+                postDiv.innerHTML = `
+                    ${post.image_path ? `
+                    <div class="post-images">
+                        <img src="${post.image_path}" alt="post">
+                    </div>` : ''}
+                    
+                    <div class="avatar-text">
+                        <div class="user-avatar"><img src="${post.avatar_path}" alt="user-avatar"></div>
+                        <div class="text">
+                            <p class="usernames">${post.author}</p>
+                            <p class="main-text">${post.description}</p>
+                            <button>Show more</button>
+                            <div class="post-like">
+                                <button></button>
+                                <p>${post.likes}</p>
+                            </div>
+                        </div>
+                    </div>
+                `;
+
+                feed.appendChild(postDiv);
+
+                // ===== Show more functionality for dynamic posts =====
+                const text = postDiv.querySelector(".main-text");
+                const button = postDiv.querySelector("button");
+
+                // measure full height
+                const clone = text.cloneNode(true);
+                clone.style.visibility = "hidden";
+                clone.style.position = "absolute";
+                clone.style.height = "auto";
+                clone.style.webkitLineClamp = "unset";
+                clone.classList.add("expanded");
+                document.body.appendChild(clone);
+
+                if (clone.offsetHeight <= text.offsetHeight) button.style.display = "none";
+                clone.remove();
+
+                button.addEventListener("click", function() {
+                    text.classList.toggle("expanded");
+                    this.textContent = text.classList.contains("expanded") ? "Show less" : "Show more";
+                });
+            });
+        })
+        .catch(error => console.error('Error loading JSON:', error));
+    });
+    </script>
+
 </body>
 </html>
