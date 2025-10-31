@@ -183,11 +183,14 @@
      <script>
     document.addEventListener("DOMContentLoaded", function() {
     const url = 'https://api.jsonbin.io/v3/b/6904951bae596e708f39ffc3';
+    //const path = 'assets/json/posts.json'   DO NOT WORK maybe problem with fetch, or we need to do directly in js our json...
 
-    fetch(url)
+
+    fetch(url)  // fetch(url) if json from website
         .then(response => response.json())
         .then(data => {
-            const posts = data.record; 
+            const posts = data.record; // for url 
+            //const posts = data; for local usage?
             const feed = document.getElementById('feed-of-posts');
             const postsArray = Array.isArray(posts) ? posts : [posts];
 
