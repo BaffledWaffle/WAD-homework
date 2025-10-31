@@ -15,10 +15,19 @@
                 <a href="index.html" target="_self"  class="nav-link">Home</a>
                 <span id="divider">|</span>
                 <a href="addPost.html" target="_self"  class="nav-link">Add post</a>
-            </div>
-            <div id="account">                                 
-                <div id="account-image-container">                
-                    <a href="login.html" target="_self"  class="nav-link"><img src="assets/img/account_circle.svg" alt=""></a>
+            </div>                                
+                <!-- <div id="account-image-container">                
+                    <a href="login.html" target="_self"  class="nav-link"><img src="assets/img/account_circle.svg" alt=""></a> -->
+
+            <div id="account">
+                <div id="account-image-container">
+                    <a  class="nav-link"><img src="assets/img/account_circle.svg" alt="" id="account-img"></a>
+
+                    <div id="myDropdown" class="dropdown-content">
+                    <a href="#">username</a>
+                    <a href="#">email</a>
+                    <a href="login.html">Log in out</a>
+                    </div>
                 </div>
             </div>
         </nav>
@@ -26,108 +35,7 @@
             <div id="content-positioner">
                 <div class="sidebar left"></div>
                 <div id="feed-of-posts">
-                    <!-- <div class="post">
-                        <div class="post-images">
-                            <img src="assets/img/post1.png" alt="post">
-                        </div>
-                        <div class="avatar-text">
-                            <div class="user-avatar"><img src="assets/img/account_circle.svg" alt="user-avatar"></div>
-
-                            <div class="text">
-                                <p class="usernames">Lilypad</p>
-                                <p class="main-text">Sun is shining and my plants are lovin' it</p>
-                                <button>Show more</button>   
-
-                                <div class="post-like">
-                                    <button></button>
-                                </div> 
-                            </div>
-                        </div>
-                    </div>
-                    <div class="post">
-                        <div class="avatar-text">
-                            <div class="user-avatar"><img src="assets/img/account_circle.svg" alt="user-avatar"></div>
-
-                            <div class="text">
-                                <p class="usernames">PhilosophyIsLife</p>
-                                <p class="main-text">Have you ever really thought about pizza? Like, really *thought* about it? 
-                                    It’s more than just bread, sauce, and cheese — it’s a symbol of balance and unity. 
-                                    Every slice begins with a foundation — the crust — much like our lives start with the basics we’re given. 
-                                    Then comes the sauce, rich and messy, spreading everywhere. That’s our passion, our chaos, our energy.  
-                                    The cheese, though, is what brings it all together — it melts, adapts, and covers the rough edges. 
-                                    It’s love, patience, and time. 
-                                    <br> 
-                                    And toppings? That’s where individuality shines. Some people go simple — just mozzarella and basil. 
-                                    Others go bold — pineapple, anchovies, even corn (which I still can’t decide is genius or madness).  
-                                    But in the end, no matter the toppings, it’s still pizza — a reminder that we can all be different and still share the same base.  
-                                    <br>
-                                    So next time you open a pizza box, remember: you’re not just eating food. 
-                                    You’re holding a circle of philosophy, a slice of life itself.</p>
-                                <button>Show more</button>   
-
-                                <div class="post-like">
-                                    <button></button>
-                                </div> 
-                            </div>
-                        </div>
-                    </div>
-                    <div class="post">
-                        <div class="post-images">
-                            <img src="assets/img/Volli.png" alt="post">
-                        </div>
-                        <div class="avatar-text">
-                            <div class="user-avatar"><img src="assets/img/account_circle.svg" alt="user-avatar"></div>
-
-                            <div class="text">
-                                <p class="usernames">Daisy</p>
-                                <p class="main-text">Since everyone loves cats, I thought I'd share
-                                     a picture of my cat Voldemar (Volli for short)</p>
-                                <button>Show more</button>   
-
-                                <div class="post-like">
-                                    <button></button>
-                                </div> 
-                            </div>
-                        </div>
-                    </div>
-                    <div class="post">
-                        <div class="post-images">
-                        <img src="assets/img/post2.png" alt="post">
-                        </div>
-                        
-                        <div class="avatar-text">
-                            <div class="user-avatar"><img src="assets/img/account_circle.svg" alt="user-avatar"></div>
-
-                            <div class="text">
-                                <p class="usernames">PoeticFrog</p>
-                                <p class="main-text">Seashells are whispers of the ocean, carrying the memory of waves in their quiet spirals</p>
-                                <button>Show more</button>   
-
-                                <div class="post-like">
-                                    <button></button>
-                                </div> 
-                            </div>
-                        </div>
-                    </div>
-                    <div class="post">
-                        <div class="post-images">
-                        <img src="assets/img/OpossumWizard.jpg" alt="post">
-                        </div>
-                        
-                        <div class="avatar-text">
-                            <div class="user-avatar"><img src="assets/img/account_circle.svg" alt="user-avatar"></div>
-
-                            <div class="text">
-                                <p class="usernames">PrettyBoy</p>
-                                <p class="main-text">Tried to find some aesthetic pictures on Pinterest. This is what came up</p>
-                                <button>Show more</button>   
-
-                                <div class="post-like">
-                                    <button></button>
-                                </div> 
-                            </div>
-                        </div>
-                    </div> -->
+                        <!-- from json-->
                 </div>
                 <div class="sidebar right"></div>
             </div>
@@ -160,6 +68,26 @@
         </footer>
     </div>
     
+    <!-- NEW dropdown menu-->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+        const accountImg = document.getElementById("account-img");
+        const dropdown = document.getElementById("myDropdown");
+
+        accountImg.addEventListener("click", function(event) {
+            event.stopPropagation(); 
+            dropdown.classList.toggle("show");
+        });
+
+        // close dropdown menu if clicked
+        document.addEventListener("click", function() {
+            dropdown.classList.remove("show");
+        });
+        });
+</script>
+
+
+
     <script> /*Displays a new quote in the footer every time the page refreshes*/
     document.addEventListener("DOMContentLoaded", function() {
         const quotes = [
