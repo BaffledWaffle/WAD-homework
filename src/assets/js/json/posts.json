@@ -43,5 +43,50 @@
     "avatar_path": "assets/img/account_circle.svg",
     "image_path": "assets/img/OpossumWizard.jpg",
     "likes": 150
+  },
+  {
+    "id": 6,
+    "author": "LeafLover",
+    "created_at": "2025-10-06T08:11:00",
+    "description": "Autumn is my favorite season. The air smells like nostalgia 🍂",
+    "avatar_path": "assets/img/account_circle.svg",
+    "image_path": "assets/img/autumn.jpg",
+    "likes": 53
+  },
+  {
+    "id": 7,
+    "author": "Bookworm",
+    "created_at": "2025-10-06T19:40:00",
+    "description": "Just finished reading 'The Night Circus' — absolutely magical.",
+    "avatar_path": "assets/img/account_circle.svg",
+    "image_path": null,
+    "likes": 92
+  },
+  {
+    "id": 8,
+    "author": "OceanSoul",
+    "created_at": "2025-10-07T15:00:00",
+    "description": "The sea calms my mind and shakes my soul.",
+    "avatar_path": "assets/img/account_circle.svg",
+    "image_path": null,
+    "likes": 274
+  },
+  {
+    "id": 9,
+    "author": "BreadLover",
+    "created_at": "2025-10-08T02:05:00",
+    "description": "My parrot is the coolest and no one can convince me otherwise",
+    "avatar_path": "assets/img/account_circle.svg",
+    "image_path": "assets/img/CoolParrot.jpg",
+    "likes": 131
+  },
+  {
+    "id": 10,
+    "author": "Dreamer",
+    "created_at": "2025-10-09T22:22:00",
+    "description": "The stars don’t look bigger, but they do look brighter tonight.",
+    "avatar_path": "assets/img/account_circle.svg",
+    "image_path": "assets/img/stars.jpg",
+    "likes": 53
   }
 ]
