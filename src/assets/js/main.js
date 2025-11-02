@@ -17,7 +17,7 @@ document.addEventListener("click", function() {
 // /* === json usage with URL === */
 
 // document.addEventListener("DOMContentLoaded", function() {
-// const url = 'https://api.jsonbin.io/v3/b/6904951bae596e708f39ffc3';
+// const url = 'https://api.jsonbin.io/v3/b/6907ba0a43b1c97be9947207';
 
 
 // fetch(url)  // fetch(url) if json from website
